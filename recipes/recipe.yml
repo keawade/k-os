@@ -7,7 +7,7 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+image-version: 43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -20,17 +20,21 @@ modules:
   - type: dnf
     repos:
       copr:
-        - atim/starship
+        - scottames/ghostty
     install:
       packages:
-        - micro
-        - starship
+        - ghostty
+        - podman
+        - toolbox
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-terminal
+        - gnome-terminal-nautilus
+        - gnome-software
+        - gnome-tour
+        - yelp
 
   - type: default-flatpaks
     configurations:
@@ -38,8 +42,74 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
+          # General Desktop
+          - org.gnome.Boxes
+          - org.gnome.Calculator
+          - org.gnome.Calendar
+          - org.gnome.Characters
+          - org.gnome.clocks
+          - org.gnome.Decibels
+          - org.gnome.FileRoller
+          - org.gnome.Firmware
+          - org.gnome.font-viewer
+          - org.gnome.Logs
           - org.gnome.Loupe
+          - org.gnome.NautilusPreviewer
+          - org.gnome.Papers
+          - org.gnome.Showtime
+          - org.gnome.Snapshot
+          - org.gnome.TextEditor
+          - org.gnome.Weather
+          - org.gnome.World.Iotas
+          - com.mattjakeman.ExtensionManager
+          - io.github.kolunmi.Bazaar
+          - it.mijorus.gearlever
+          - io.missioncenter.MissionCenter
+          - page.tesk.Refine
+          - com.github.tchx84.Flatseal
+
+          # Communication
+          - org.signal.Signal
+          - com.discordapp.Discord
+          - org.zulip.Zulip
+          - dev.geopjr.Tuba
+          - it.mijorus.smile
+
+          # Browsers
+          - com.vivaldi.Vivaldi
+          - org.chromium.Chromium
+          - org.mozilla.firefox
+
+          # Productivity
+          - org.libreoffice.LibreOffice
+          - org.gimp.GIMP
+          - com.github.finefindus.eyedropper
+
+          # Development
+          - com.ranfdev.DistroShelf
+          - com.usebruno.Bruno
+          - dev.gbstudio.gb-studio
+          - org.mapeditor.Tiled
+
+          # Entertainment
+          - com.valvesoftware.Steam
+          - org.jellyfin.JellyfinDesktop
+          - io.mgba.mGBA
+          - com.moonlight_stream.Moonlight
+          - io.mpv.Mpv
+          - org.jeffvli.feishin
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: gnome-extensions
+    install:
+      - Caffeine
+      - Bing Wallpaper
+      - Tiling Shell
+      - Alphabetical App Grid
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

@@ -53,14 +53,36 @@ modules:
         - fedora-third-party
         - fedora-workstation-repositories
         - fedora-chromium-config
-        - mediawriter
+        - fedora-workstation-backgrounds
+        - fedora-bookmarks
         - htop
         - nvtop
         - yelp
 
+  - type: default-flatpaks
+    configurations:
+      - install:
+          # OS Utilities
+          - io.missioncenter.MissionCenter
+          - io.github.kolunmi.Bazaar
+          - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+
+          # Browsers
+          - com.vivaldi.Vivaldi
+          - org.mozilla.firefox
+          - org.chromium.Chromium
+
+          # Entertainment
+          - com.valvesoftware.Steam
+          - io.github.Foldex.AdwSteamGtk
+
   - type: gschema-overrides
     include:
       - zz1-k-os.gschema.override
+
+  - type: brew
+    brew-analytics: false
 
   - type: script
     snippets:
@@ -69,6 +91,16 @@ modules:
       # Not sure why but it doesn't show up until I also enable the
       # open-any-terminal extension which then creates a duplicate.
       - "rm -f /usr/share/nautilus-python/extensions/ghostty.py"
+      # Hide unneeded desktop entries
+      - echo "Hidden=true" | tee -a
+        /usr/share/applications/{nvidia-settings,fish,nvim}.desktop
+
+  - type: gnome-extensions
+    install:
+      - Alphabetical App Grid
+      - Bing Wallpaper
+      - Caffeine
+      - Tiling Shell
 
   - type: fonts
     fonts:

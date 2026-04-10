@@ -1,6 +1,10 @@
 [org.gnome.desktop.wm.preferences]
 button-layout='close:appmenu'
 
+[org.gnome.desktop.wm.keybindings]
+switch-windows=['<Alt>Tab']
+switch-windows-backwards=['<Shift><Alt>Tab']
+
 [org.gnome.desktop.interface]
 color-scheme='prefer-dark'
 

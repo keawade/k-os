@@ -21,12 +21,14 @@ modules:
     repos:
       copr:
         - scottames/ghostty
+        - monkeygold/nautilus-open-any-terminal
     install:
       packages:
         - ghostty
         - podman
         - podman-compose
         - podman-docker
+        - nautilus-open-any-terminal
         - toolbox
         - fish
         - neovim

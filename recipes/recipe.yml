@@ -21,24 +21,45 @@ modules:
     repos:
       copr:
         - scottames/ghostty
+        - monkeygold/nautilus-open-any-terminal
     install:
       packages:
         - ghostty
         - podman
+        - podman-compose
+        - podman-docker
+        - nautilus-open-any-terminal
         - toolbox
         - fish
+        - neovim
     remove:
       packages:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - ptyxis
         - gnome-terminal
         - gnome-terminal-nautilus
+        - gnome-tour
+        - gnome-classic-session
+        - gnome-shell-extension-apps-menu
+        - gnome-shell-extension-background-logo
+        - gnome-shell-extension-launch-new-instance
+        - gnome-shell-extension-places-menu
+        - gnome-shell-extension-window-list
         - gnome-software
-        - ptyxis
+        - gnome-tweaks
+        - gnome-system-monitor
         - fedora-flathub-remote
         - fedora-third-party
         - fedora-workstation-repositories
         - fedora-chromium-config
+        - htop
+        - nvtop
+        - yelp
+
+  - type: gschema-overrides
+    include:
+      - k-os.gschema.override
 
   - type: fonts
     fonts:

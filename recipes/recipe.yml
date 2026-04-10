@@ -32,6 +32,7 @@ modules:
         - toolbox
         - fish
         - neovim
+        - util-linux
     remove:
       packages:
         - firefox
@@ -53,13 +54,14 @@ modules:
         - fedora-third-party
         - fedora-workstation-repositories
         - fedora-chromium-config
+        - mediawriter
         - htop
         - nvtop
         - yelp
 
   - type: gschema-overrides
     include:
-      - k-os.gschema.override
+      - zz1-k-os.gschema.override
 
   - type: fonts
     fonts:

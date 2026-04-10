@@ -62,11 +62,34 @@ modules:
   - type: default-flatpaks
     configurations:
       - install:
+          # Gnome Core Apps
+          - org.gnome.Calculator
+          - org.gnome.Calendar
+          - org.gnome.Snapshot
+          - org.gnome.Characters
+          - org.gnome.clocks
+          - org.gnome.Connections
+          - org.gnome.baobab
+          - org.gnome.SimpleScan
+          - org.gnome.Evince
+          - org.gnome.font-viewer
+          - org.gnome.Loupe
+          - org.gnome.Logs
+          - org.gnome.TextEditor
+          - org.gnome.Epiphany
+
           # OS Utilities
           - io.missioncenter.MissionCenter
           - io.github.kolunmi.Bazaar
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
+          - com.mattjakeman.ExtensionManager
+          - it.mijorus.smile
+          - org.gnome.World.Iotas
+          - org.gnome.NautilusPreviewer
+          - com.rafaelmardojai.Blanket
+          - app.drey.Warp
+          - it.mijorus.gearlever
 
           # Browsers
           - com.vivaldi.Vivaldi
@@ -74,8 +97,24 @@ modules:
           - org.chromium.Chromium
 
           # Entertainment
+          - org.jeffvli.feishin
+          - org.jellyfin.JellyfinDesktop
+          - io.mpv.Mpv
+          - com.moonlight_stream.Moonlight
           - com.valvesoftware.Steam
           - io.github.Foldex.AdwSteamGtk
+
+          # Communication
+          - com.discordapp.Discord
+          - org.signal.Signal
+          - com.slack.Slack
+          - org.zulip.Zulip
+
+          # Development
+          - com.rafaelmardojai.SharePreview
+          - com.mardojai.ForgeSparks
+          - org.gimp.GIMP
+          - org.mapeditor.Tiled
 
   - type: gschema-overrides
     include:

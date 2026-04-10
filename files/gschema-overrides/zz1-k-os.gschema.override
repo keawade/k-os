@@ -9,4 +9,5 @@ switch-windows-backward=['<Shift><Alt>Tab']
 color-scheme='prefer-dark'
 
 [com.github.stunkymonkey.nautilus-open-any-terminal]
+terminal='ghostty'
 new-tab=false

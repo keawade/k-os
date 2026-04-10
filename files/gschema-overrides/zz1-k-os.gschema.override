@@ -13,3 +13,10 @@ terminal='ghostty'
 new-tab=false
 flatpak='system'
 keybindings='<Ctrl><Alt>t'
+
+[org.gnome.shell.extensions.bingwallpaper]
+icon-name='low-frame-symbolic'
+download-folder='~/Pictures/BingWallpaper/'
+
+[org.gnome.shell.extensions.tilingshell]
+layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.4,"height":1,"groups":[1]},{"x":0.4,"y":0,"width":0.6,"height":1,"groups":[1]}]},{"id":"30306523","tiles":[{"x":0,"y":0,"width":0.6,"height":1,"groups":[2]},{"x":0.6,"y":0,"width":0.4,"height":1,"groups":[2]}]}]'

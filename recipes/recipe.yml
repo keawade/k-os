@@ -62,6 +62,14 @@ modules:
     include:
       - zz1-k-os.gschema.override
 
+  - type: script
+    snippets:
+      # Remove the Ghostty nautilus extension
+      #
+      # Not sure why but it doesn't show up until I also enable the
+      # open-any-terminal extension which then creates a duplicate.
+      - "rm -f /usr/share/nautilus-python/extensions/ghostty.py"
+
   - type: fonts
     fonts:
       nerd-fonts:

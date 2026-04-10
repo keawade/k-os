@@ -26,6 +26,7 @@ modules:
         - ghostty
         - podman
         - toolbox
+        - fish
     remove:
       packages:
         - firefox
@@ -33,6 +34,11 @@ modules:
         - gnome-terminal
         - gnome-terminal-nautilus
         - gnome-software
+        - ptyxis
+        - fedora-flathub-remote
+        - fedora-third-party
+        - fedora-workstation-repositories
+        - fedora-chromium-config
 
   - type: fonts
     fonts:

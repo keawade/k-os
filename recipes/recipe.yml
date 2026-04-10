@@ -97,10 +97,10 @@ modules:
 
   - type: gnome-extensions
     install:
-      - Alphabetical App Grid
-      - Bing Wallpaper
-      - Caffeine
-      - Tiling Shell
+      - 4269 # Alphabetical App Grid
+      - 1262 # Bing Wallpaper
+      - 517 # Caffeine
+      - 7065 # Tiling Shell
 
   - type: fonts
     fonts:

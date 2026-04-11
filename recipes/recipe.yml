@@ -90,6 +90,7 @@ modules:
           - com.rafaelmardojai.Blanket
           - app.drey.Warp
           - it.mijorus.gearlever
+          - org.altlinux.Tuner
 
           # Browsers
           - com.vivaldi.Vivaldi
@@ -115,6 +116,9 @@ modules:
           - com.mardojai.ForgeSparks
           - org.gimp.GIMP
           - org.mapeditor.Tiled
+          - com.usebruno.Bruno
+
+          - org.libreoffice.LibreOffice
 
   - type: gschema-overrides
     include:
@@ -140,10 +144,6 @@ modules:
       # Hide unneeded desktop entries
       - echo "Hidden=true" | tee -a
         /usr/share/applications/{nvidia-settings,fish,nvim}.desktop
-      - gnome-extensions enable AlphabeticalAppGrid@stuarthayhurst
-      - gnome-extensions enable BingWallpaper@ineffable-gmail.com
-      - gnome-extensions enable caffeine@patapon.info
-      - gnome-extensions enable tilingshell@ferrarodomenico.com
 
   - type: fonts
     fonts:

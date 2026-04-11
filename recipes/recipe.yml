@@ -123,6 +123,13 @@ modules:
   - type: brew
     brew-analytics: false
 
+  - type: gnome-extensions
+    install:
+      - 4269 # Alphabetical App Grid
+      - 1262 # Bing Wallpaper
+      - 517 # Caffeine
+      - 7065 # Tiling Shell
+
   - type: script
     snippets:
       # Remove the Ghostty nautilus extension
@@ -133,13 +140,10 @@ modules:
       # Hide unneeded desktop entries
       - echo "Hidden=true" | tee -a
         /usr/share/applications/{nvidia-settings,fish,nvim}.desktop
-
-  - type: gnome-extensions
-    install:
-      - 4269 # Alphabetical App Grid
-      - 1262 # Bing Wallpaper
-      - 517 # Caffeine
-      - 7065 # Tiling Shell
+      - gnome-extensions enable AlphabeticalAppGrid@stuarthayhurst
+      - gnome-extensions enable BingWallpaper@ineffable-gmail.com
+      - gnome-extensions enable caffeine@patapon.info
+      - gnome-extensions enable tilingshell@ferrarodomenico.com
 
   - type: fonts
     fonts:

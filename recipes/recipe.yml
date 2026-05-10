@@ -28,10 +28,7 @@ modules:
         - podman
         - podman-compose
         - podman-docker
-        - nautilus-open-any-terminal
         - toolbox
-        - fish
-        - neovim
         - openresolv
         - syncthing
     remove:
@@ -138,14 +135,9 @@ modules:
 
   - type: script
     snippets:
-      # Remove the Ghostty nautilus extension
-      #
-      # Not sure why but it doesn't show up until I also enable the
-      # open-any-terminal extension which then creates a duplicate.
-      - "rm -f /usr/share/nautilus-python/extensions/ghostty.py"
       # Hide unneeded desktop entries
       - echo "Hidden=true" | tee -a
-        /usr/share/applications/{nvidia-settings,fish,nvim}.desktop
+        /usr/share/applications/{nvidia-settings}.desktop
 
   - type: fonts
     fonts:

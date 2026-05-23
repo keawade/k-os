@@ -31,6 +31,8 @@ modules:
         - toolbox
         - openresolv
         - syncthing
+        - flatpak-builder
+        - elfutils
     remove:
       packages:
         - firefox
